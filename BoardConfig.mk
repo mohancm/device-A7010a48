@@ -1,5 +1,5 @@
 # mt6753 platform boardconfig
-LOCAL_PATH := device/mtk/a7010
+LOCAL_PATH := device/lenovo/A7010a48
 
 MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
@@ -11,7 +11,7 @@ BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
 
 #USE_CCACHE:=1
 #CCACHE_DIR:=$(LOCAL_PATH)/../../.ccache
-USE_NINJA:=false
+#USE_NINJA:=false
 #JACK_SERVER_VM_ARGUMENTS:="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx2560m"
 
 # Platform
@@ -33,7 +33,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Minus 16kb for encrypt footer
 BOARD_USERDATAIMAGE_PARTITION_SIZE:=10737401856
 
-BLOCK_BASED_OTA :=false
+#BLOCK_BASED_OTA :=false
 
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -55,7 +55,7 @@ MTK_KERNEL_PREBUILD:=no
 ifneq ($(MTK_KERNEL_PREBUILD),yes)
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := k5fpr_defconfig
-TARGET_KERNEL_SOURCE := kernel/mtk/kernel-3.19
+TARGET_KERNEL_SOURCE := kernel/lenovo/A7010a48
 else
 # Hack for build
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
@@ -120,7 +120,7 @@ TARGET_KMODULES := true
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 # Display
-BOARD_EGL_CFG := /vendor/mtk/a7010/vendor/lib/egl/egl.cfg
+BOARD_EGL_CFG := /vendor/lenovo/A7010a48/vendor/lib/egl/egl.cfg
 USE_OPENGL_RENDERER:=true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -188,7 +188,7 @@ BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
 
 # RIL
 SIM_COUNT := 2
-BOARD_RIL_CLASS := ../../../device/mtk/a7010/ril
+BOARD_RIL_CLASS := ../../../device/lenovo/A7010a48/ril
 
 # Wireless
 BOARD_WLAN_DEVICE := MediaTek
@@ -223,10 +223,10 @@ TARGET_NO_RECOVERY := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/mtk/a7010/sepolicy
+    device/lenovo/A7010a48/sepolicy
     
 # Seccomp filter
-BOARD_SECCOMP_POLICY += device/mtk/a7010/seccomp
+BOARD_SECCOMP_POLICY += device/lenovo/A7010a48/seccomp
     
 # Graphics
 MTK_GPU_VERSION := mali midgard r12p1
